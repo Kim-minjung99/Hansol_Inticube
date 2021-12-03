@@ -1,0 +1,820 @@
+Last login: Wed Nov 24 16:13:05 2021
+[root@ET-TEAM2 ~]# mkdir
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+[root@ET-TEAM2 ~]# mkdir application
+[root@ET-TEAM2 ~]# ls -l
+total 4
+-rw-------. 1 root root 1290 Mar 12  2021 anaconda-ks.cfg
+drwxr-xr-x  2 root root    6 Nov 24 16:44 application
+[root@ET-TEAM2 ~]# rm application/
+rm: cannot remove ‘application/’: Is a directory
+[root@ET-TEAM2 ~]# rmdir application
+[root@ET-TEAM2 ~]# ls -l
+total 4
+-rw-------. 1 root root 1290 Mar 12  2021 anaconda-ks.cfg
+[root@ET-TEAM2 ~]# pwd
+/root
+[root@ET-TEAM2 ~]# cd /Hansol/
+[root@ET-TEAM2 Hansol]# ls -l
+total 0
+drwxr-xr-x 2 root root  6 Nov 19 17:03 download
+drwxr-xr-x 3 root root 69 Nov 19 18:01 server
+[root@ET-TEAM2 Hansol]# mkdir application
+[root@ET-TEAM2 Hansol]# ls -l
+total 0
+drwxr-xr-x 2 root root  6 Nov 24 16:45 application
+drwxr-xr-x 2 root root  6 Nov 19 17:03 download
+drwxr-xr-x 3 root root 69 Nov 19 18:01 server
+[root@ET-TEAM2 Hansol]# su tomcat
+[tomcat@ET-TEAM2 Hansol]$ exit
+exit
+[root@ET-TEAM2 Hansol]# rmdir application/
+[root@ET-TEAM2 Hansol]# ls -l
+total 0
+drwxr-xr-x 2 root root  6 Nov 19 17:03 download
+drwxr-xr-x 3 root root 69 Nov 19 18:01 server
+[root@ET-TEAM2 Hansol]# su tomcat
+[tomcat@ET-TEAM2 Hansol]$ cd /Hansol/
+[tomcat@ET-TEAM2 Hansol]$ mkdir application
+mkdir: cannot create directory ‘application’: Permission denied
+[tomcat@ET-TEAM2 Hansol]$ sudo mkdir application
+[tomcat@ET-TEAM2 Hansol]$ ls -l
+total 0
+drwxr-xr-x 2 root root  6 Nov 24 16:47 application
+drwxr-xr-x 2 root root  6 Nov 19 17:03 download
+drwxr-xr-x 3 root root 69 Nov 19 18:01 server
+[tomcat@ET-TEAM2 Hansol]$ chown tomcat:tomcat application/
+chown: changing ownership of ‘application/’: Operation not permitted
+[tomcat@ET-TEAM2 Hansol]$ chown tomcat:tomcat application
+chown: changing ownership of ‘application’: Operation not permitted
+[tomcat@ET-TEAM2 Hansol]$ sudo chown tomcat:tomcat application
+[tomcat@ET-TEAM2 Hansol]$ sl -l
+bash: sl: command not found
+[tomcat@ET-TEAM2 Hansol]$ ls -l
+total 0
+drwxr-xr-x 2 tomcat tomcat  6 Nov 24 16:47 application
+drwxr-xr-x 2 root   root    6 Nov 19 17:03 download
+drwxr-xr-x 3 root   root   69 Nov 19 18:01 server
+[tomcat@ET-TEAM2 Hansol]$ cd /Hansol/server/apache-tomcat-8.5.59/
+bin/     conf/    lib/     logs/    temp/    webapps/ work/
+[tomcat@ET-TEAM2 Hansol]$ cd /Hansol/server/apache-tomcat-8.5.59/
+bin/     conf/    lib/     logs/    temp/    webapps/ work/
+[tomcat@ET-TEAM2 Hansol]$ cd /Hansol/server/apache-tomcat-8.5.59/
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ ls -l
+total 128
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 bin
+-rw-r----- 1 tomcat tomcat 19318 Oct  7  2020 BUILDING.txt
+drwx------ 3 tomcat tomcat   254 Nov 19 18:11 conf
+-rw-r----- 1 tomcat tomcat  5408 Oct  7  2020 CONTRIBUTING.md
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 lib
+-rw-r----- 1 tomcat tomcat 57011 Oct  7  2020 LICENSE
+drwxr-x--- 2 tomcat tomcat  4096 Nov 24 15:52 logs
+-rw-r----- 1 tomcat tomcat  1726 Oct  7  2020 NOTICE
+-rw-r----- 1 tomcat tomcat  3257 Oct  7  2020 README.md
+-rw-r----- 1 tomcat tomcat  7136 Oct  7  2020 RELEASE-NOTES
+-rw-r----- 1 tomcat tomcat 16262 Oct  7  2020 RUNNING.txt
+drwxr-x--- 2 tomcat tomcat    30 Nov 19 17:36 temp
+drwxr-x--- 7 tomcat tomcat   116 Nov 24 16:50 webapps
+drwxr-x--- 3 tomcat tomcat    22 Nov 19 18:11 work
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ cd bin/
+[tomcat@ET-TEAM2 bin]$ s -=l
+bash: s: command not found
+[tomcat@ET-TEAM2 bin]$ ls -l
+total 868
+-rw-r----- 1 tomcat tomcat  36132 Oct  7  2020 bootstrap.jar
+-rw-r----- 1 tomcat tomcat  16655 Oct  7  2020 catalina.bat
+-rwxr-x--- 1 tomcat tomcat  25121 Oct  7  2020 catalina.sh
+-rw-r----- 1 tomcat tomcat   1664 Oct  7  2020 catalina-tasks.xml
+-rw-r----- 1 tomcat tomcat   2123 Oct  7  2020 ciphers.bat
+-rwxr-x--- 1 tomcat tomcat   1997 Oct  7  2020 ciphers.sh
+-rw-r----- 1 tomcat tomcat  25287 Oct  7  2020 commons-daemon.jar
+-rw-r----- 1 tomcat tomcat 208136 Oct  7  2020 commons-daemon-native.tar.gz
+-rw-r----- 1 tomcat tomcat   2040 Oct  7  2020 configtest.bat
+-rwxr-x--- 1 tomcat tomcat   1922 Oct  7  2020 configtest.sh
+-rwxr-x--- 1 tomcat tomcat   9100 Oct  7  2020 daemon.sh
+-rw-r----- 1 tomcat tomcat   2091 Oct  7  2020 digest.bat
+-rwxr-x--- 1 tomcat tomcat   1965 Oct  7  2020 digest.sh
+-rw-r----- 1 tomcat tomcat   3460 Oct  7  2020 setclasspath.bat
+-rwxr-x--- 1 tomcat tomcat   3708 Oct  7  2020 setclasspath.sh
+-rw-r----- 1 tomcat tomcat   2020 Oct  7  2020 shutdown.bat
+-rwxr-x--- 1 tomcat tomcat   1902 Oct  7  2020 shutdown.sh
+-rw-r----- 1 tomcat tomcat   2022 Oct  7  2020 startup.bat
+-rwxr-x--- 1 tomcat tomcat   1904 Oct  7  2020 startup.sh
+-rw-r----- 1 tomcat tomcat  51205 Oct  7  2020 tomcat-juli.jar
+-rw-r----- 1 tomcat tomcat 421399 Oct  7  2020 tomcat-native.tar.gz
+-rw-r----- 1 tomcat tomcat   4574 Oct  7  2020 tool-wrapper.bat
+-rwxr-x--- 1 tomcat tomcat   5540 Oct  7  2020 tool-wrapper.sh
+-rw-r----- 1 tomcat tomcat   2026 Oct  7  2020 version.bat
+-rwxr-x--- 1 tomcat tomcat   1908 Oct  7  2020 version.sh
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86                                                                              _64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Ha                                                                              nsol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Nov 24, 2021 4:56:00 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Could not contact [localhost:8005]. Tomcat may not be running.
+Nov 24, 2021 4:56:00 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Catalina.stop:
+java.net.ConnectException: Connection refused (Connection refused)
+        at java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.ja                                                                              va:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocket                                                                              Impl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java                                                                              :188)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.net.Socket.connect(Socket.java:607)
+        at java.net.Socket.connect(Socket.java:556)
+        at java.net.Socket.<init>(Socket.java:452)
+        at java.net.Socket.<init>(Socket.java:229)
+        at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:504)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.                                                                              java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces                                                                              sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+        at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86                                                                              _64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Ha                                                                              nsol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ cd ..
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ ls -l
+total 128
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 bin
+-rw-r----- 1 tomcat tomcat 19318 Oct  7  2020 BUILDING.txt
+drwx------ 3 tomcat tomcat   254 Nov 19 18:11 conf
+-rw-r----- 1 tomcat tomcat  5408 Oct  7  2020 CONTRIBUTING.md
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 lib
+-rw-r----- 1 tomcat tomcat 57011 Oct  7  2020 LICENSE
+drwxr-x--- 2 tomcat tomcat  4096 Nov 24 15:52 logs
+-rw-r----- 1 tomcat tomcat  1726 Oct  7  2020 NOTICE
+-rw-r----- 1 tomcat tomcat  3257 Oct  7  2020 README.md
+-rw-r----- 1 tomcat tomcat  7136 Oct  7  2020 RELEASE-NOTES
+-rw-r----- 1 tomcat tomcat 16262 Oct  7  2020 RUNNING.txt
+drwxr-x--- 2 tomcat tomcat    30 Nov 19 17:36 temp
+drwxr-x--- 8 tomcat tomcat   147 Nov 24 16:56 webapps
+drwxr-x--- 3 tomcat tomcat    22 Nov 19 18:11 work
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ cd conf/
+[tomcat@ET-TEAM2 conf]$ ls -l
+total 224
+drwxr-x--- 3 tomcat tomcat     23 Nov 19 18:11 Catalina
+-rw------- 1 tomcat tomcat  13256 Oct  7  2020 catalina.policy
+-rw------- 1 tomcat tomcat   7661 Oct  7  2020 catalina.properties
+-rw------- 1 tomcat tomcat   1338 Oct  7  2020 context.xml
+-rw------- 1 tomcat tomcat   1149 Oct  7  2020 jaspic-providers.xml
+-rw------- 1 tomcat tomcat   2313 Oct  7  2020 jaspic-providers.xsd
+-rw------- 1 tomcat tomcat   3916 Oct  7  2020 logging.properties
+-rw------- 1 tomcat tomcat   7588 Oct  7  2020 server.xml
+-rw------- 1 tomcat tomcat   2164 Oct  7  2020 tomcat-users.xml
+-rw------- 1 tomcat tomcat   2558 Oct  7  2020 tomcat-users.xsd
+-rw------- 1 tomcat tomcat 171879 Oct  7  2020 web.xml
+[tomcat@ET-TEAM2 conf]$ pwd
+/Hansol/server/apache-tomcat-8.5.59/conf
+[tomcat@ET-TEAM2 conf]$ vim server.xml
+[tomcat@ET-TEAM2 conf]$ vim server.xml
+[tomcat@ET-TEAM2 conf]$ vim server.xml
+[tomcat@ET-TEAM2 conf]$ cd /
+[tomcat@ET-TEAM2 /]$ ls -l
+total 28
+lrwxrwxrwx.   1 root root    7 Mar 12  2021 bin -> usr/bin
+dr-xr-xr-x.   5 root root 4096 Mar 15  2021 boot
+drwxr-xr-x    2 root root    6 Nov 19 17:02 cd
+drwxr-xr-x   21 root root 3280 Nov 24 09:39 dev
+drwxr-xr-x.  94 root root 8192 Nov 24 13:11 etc
+drwxr-xr-x    5 root root   55 Nov 24 16:47 Hansol
+drwxr-xr-x.   3 root root   20 Nov 24 11:44 home
+lrwxrwxrwx.   1 root root    7 Mar 12  2021 lib -> usr/lib
+lrwxrwxrwx.   1 root root    9 Mar 12  2021 lib64 -> usr/lib64
+drwxr-xr-x.   2 root root    6 Apr 11  2018 media
+drwxr-xr-x.   2 root root    6 Apr 11  2018 mnt
+drwxr-xr-x.   3 root root   16 Mar 12  2021 opt
+dr-xr-xr-x  135 root root    0 Nov 24 09:39 proc
+dr-xr-x---.   6 root root  226 Nov 24 16:45 root
+drwxr-xr-x   32 root root  980 Nov 24 09:39 run
+lrwxrwxrwx.   1 root root    8 Mar 12  2021 sbin -> usr/sbin
+-rw-r--r--    1 root root 7687 Oct 22 17:02 server.xml
+drwxr-xr-x.   2 root root    6 Apr 11  2018 srv
+dr-xr-xr-x   13 root root    0 Nov 24 11:28 sys
+drwxrwxrwt.   9 root root  159 Nov 24 17:09 tmp
+drwxr-xr-x.  13 root root  155 Mar 12  2021 usr
+drwxr-xr-x.  21 root root 4096 Mar 15  2021 var
+[tomcat@ET-TEAM2 /]$ cd Hansol/server/apache-tomcat-8.5.59/
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ cd bin/
+[tomcat@ET-TEAM2 bin]$ ls -l
+total 868
+-rw-r----- 1 tomcat tomcat  36132 Oct  7  2020 bootstrap.jar
+-rw-r----- 1 tomcat tomcat  16655 Oct  7  2020 catalina.bat
+-rwxr-x--- 1 tomcat tomcat  25121 Oct  7  2020 catalina.sh
+-rw-r----- 1 tomcat tomcat   1664 Oct  7  2020 catalina-tasks.xml
+-rw-r----- 1 tomcat tomcat   2123 Oct  7  2020 ciphers.bat
+-rwxr-x--- 1 tomcat tomcat   1997 Oct  7  2020 ciphers.sh
+-rw-r----- 1 tomcat tomcat  25287 Oct  7  2020 commons-daemon.jar
+-rw-r----- 1 tomcat tomcat 208136 Oct  7  2020 commons-daemon-native.tar.gz
+-rw-r----- 1 tomcat tomcat   2040 Oct  7  2020 configtest.bat
+-rwxr-x--- 1 tomcat tomcat   1922 Oct  7  2020 configtest.sh
+-rwxr-x--- 1 tomcat tomcat   9100 Oct  7  2020 daemon.sh
+-rw-r----- 1 tomcat tomcat   2091 Oct  7  2020 digest.bat
+-rwxr-x--- 1 tomcat tomcat   1965 Oct  7  2020 digest.sh
+-rw-r----- 1 tomcat tomcat   3460 Oct  7  2020 setclasspath.bat
+-rwxr-x--- 1 tomcat tomcat   3708 Oct  7  2020 setclasspath.sh
+-rw-r----- 1 tomcat tomcat   2020 Oct  7  2020 shutdown.bat
+-rwxr-x--- 1 tomcat tomcat   1902 Oct  7  2020 shutdown.sh
+-rw-r----- 1 tomcat tomcat   2022 Oct  7  2020 startup.bat
+-rwxr-x--- 1 tomcat tomcat   1904 Oct  7  2020 startup.sh
+-rw-r----- 1 tomcat tomcat  51205 Oct  7  2020 tomcat-juli.jar
+-rw-r----- 1 tomcat tomcat 421399 Oct  7  2020 tomcat-native.tar.gz
+-rw-r----- 1 tomcat tomcat   4574 Oct  7  2020 tool-wrapper.bat
+-rwxr-x--- 1 tomcat tomcat   5540 Oct  7  2020 tool-wrapper.sh
+-rw-r----- 1 tomcat tomcat   2026 Oct  7  2020 version.bat
+-rwxr-x--- 1 tomcat tomcat   1908 Oct  7  2020 version.sh
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Nov 24, 2021 5:11:15 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Could not contact [localhost:8005]. Tomcat may not be running.
+Nov 24, 2021 5:11:15 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Catalina.stop:
+java.net.ConnectException: Connection refused (Connection refused)
+        at java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.net.Socket.connect(Socket.java:607)
+        at java.net.Socket.connect(Socket.java:556)
+        at java.net.Socket.<init>(Socket.java:452)
+        at java.net.Socket.<init>(Socket.java:229)
+        at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:504)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+        at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/w
+webapps/ work/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/webapps/ROOT/
+META-INF/ org/      WEB-INF/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/webapps/ROOT/WEB-INF/
+classes/      layers.idx    lib/          lib-provided/ views/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/webapps/ROOT/WEB-INF/classes/
+application.properties      log4jdbc.log4j2.properties  mybatis-mapper/             static/
+com/                        log4j.xml                   .reloadtrigger
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/webapps/ROOT/WEB-INF/classes/application.properties
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/server/apache-tomcat-8.5.59/webapps/ROOT/WEB-INF/classes/application.properties
+[tomcat@ET-TEAM2 bin]$ ls -l
+total 868
+-rw-r----- 1 tomcat tomcat  36132 Oct  7  2020 bootstrap.jar
+-rw-r----- 1 tomcat tomcat  16655 Oct  7  2020 catalina.bat
+-rwxr-x--- 1 tomcat tomcat  25121 Oct  7  2020 catalina.sh
+-rw-r----- 1 tomcat tomcat   1664 Oct  7  2020 catalina-tasks.xml
+-rw-r----- 1 tomcat tomcat   2123 Oct  7  2020 ciphers.bat
+-rwxr-x--- 1 tomcat tomcat   1997 Oct  7  2020 ciphers.sh
+-rw-r----- 1 tomcat tomcat  25287 Oct  7  2020 commons-daemon.jar
+-rw-r----- 1 tomcat tomcat 208136 Oct  7  2020 commons-daemon-native.tar.gz
+-rw-r----- 1 tomcat tomcat   2040 Oct  7  2020 configtest.bat
+-rwxr-x--- 1 tomcat tomcat   1922 Oct  7  2020 configtest.sh
+-rwxr-x--- 1 tomcat tomcat   9100 Oct  7  2020 daemon.sh
+-rw-r----- 1 tomcat tomcat   2091 Oct  7  2020 digest.bat
+-rwxr-x--- 1 tomcat tomcat   1965 Oct  7  2020 digest.sh
+-rw-r----- 1 tomcat tomcat   3460 Oct  7  2020 setclasspath.bat
+-rwxr-x--- 1 tomcat tomcat   3708 Oct  7  2020 setclasspath.sh
+-rw-r----- 1 tomcat tomcat   2020 Oct  7  2020 shutdown.bat
+-rwxr-x--- 1 tomcat tomcat   1902 Oct  7  2020 shutdown.sh
+-rw-r----- 1 tomcat tomcat   2022 Oct  7  2020 startup.bat
+-rwxr-x--- 1 tomcat tomcat   1904 Oct  7  2020 startup.sh
+-rw-r----- 1 tomcat tomcat  51205 Oct  7  2020 tomcat-juli.jar
+-rw-r----- 1 tomcat tomcat 421399 Oct  7  2020 tomcat-native.tar.gz
+-rw-r----- 1 tomcat tomcat   4574 Oct  7  2020 tool-wrapper.bat
+-rwxr-x--- 1 tomcat tomcat   5540 Oct  7  2020 tool-wrapper.sh
+-rw-r----- 1 tomcat tomcat   2026 Oct  7  2020 version.bat
+-rwxr-x--- 1 tomcat tomcat   1908 Oct  7  2020 version.sh
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ ./shutdown/sh
+bash: ./shutdown/sh: No such file or directory
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+[tomcat@ET-TEAM2 bin]$ cd ..
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ ls -l
+total 128
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 bin
+-rw-r----- 1 tomcat tomcat 19318 Oct  7  2020 BUILDING.txt
+drwx------ 3 tomcat tomcat   254 Nov 24 17:09 conf
+-rw-r----- 1 tomcat tomcat  5408 Oct  7  2020 CONTRIBUTING.md
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 lib
+-rw-r----- 1 tomcat tomcat 57011 Oct  7  2020 LICENSE
+drwxr-x--- 2 tomcat tomcat  4096 Nov 24 15:52 logs
+-rw-r----- 1 tomcat tomcat  1726 Oct  7  2020 NOTICE
+-rw-r----- 1 tomcat tomcat  3257 Oct  7  2020 README.md
+-rw-r----- 1 tomcat tomcat  7136 Oct  7  2020 RELEASE-NOTES
+-rw-r----- 1 tomcat tomcat 16262 Oct  7  2020 RUNNING.txt
+drwxr-x--- 2 tomcat tomcat    30 Nov 19 17:36 temp
+drwxr-x--- 7 tomcat tomcat    97 Nov 24 17:08 webapps
+drwxr-x--- 3 tomcat tomcat    22 Nov 19 18:11 work
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ cd webapps/
+[tomcat@ET-TEAM2 webapps]$ ls -l
+total 62096
+drwxr-x--- 15 tomcat tomcat     4096 Nov 19 17:36 docs
+drwxr-x---  6 tomcat tomcat       83 Nov 19 17:36 examples
+drwxr-x---  5 tomcat tomcat       87 Nov 19 17:36 host-manager
+drwxr-x---  6 tomcat tomcat      114 Nov 19 17:36 manager
+drwxr-x---  5 tomcat tomcat       48 Nov 24 17:08 ROOT
+-rw-r--r--  1 tomcat tomcat 63581820 Nov 24 16:51 ROOT.war
+[tomcat@ET-TEAM2 webapps]$ cd ROOT
+[tomcat@ET-TEAM2 ROOT]$ ls -l
+total 0
+drwxr-x--- 3 tomcat tomcat 57 Nov 24 17:08 META-INF
+drwxr-x--- 3 tomcat tomcat 29 Nov 24 17:08 org
+drwxr-x--- 6 tomcat tomcat 83 Nov 24 17:08 WEB-INF
+[tomcat@ET-TEAM2 ROOT]$ cd ..
+[tomcat@ET-TEAM2 webapps]$ mv ROOT /Hansol/application
+[tomcat@ET-TEAM2 webapps]$ ls -l
+total 62096
+drwxr-x--- 15 tomcat tomcat     4096 Nov 19 17:36 docs
+drwxr-x---  6 tomcat tomcat       83 Nov 19 17:36 examples
+drwxr-x---  5 tomcat tomcat       87 Nov 19 17:36 host-manager
+drwxr-x---  6 tomcat tomcat      114 Nov 19 17:36 manager
+-rw-r--r--  1 tomcat tomcat 63581820 Nov 24 16:51 ROOT.war
+[tomcat@ET-TEAM2 webapps]$ cd /Hansol/application/
+[tomcat@ET-TEAM2 application]$ ls -l
+total 0
+drwxr-x--- 5 tomcat tomcat 48 Nov 24 17:08 ROOT
+[tomcat@ET-TEAM2 application]$ mv ROOT /Hansol
+mv: cannot move ‘ROOT’ to ‘/Hansol/ROOT’: Permission denied
+[tomcat@ET-TEAM2 application]$ sudo mv ROOT /Hansol
+[tomcat@ET-TEAM2 application]$ ls -l
+total 0
+[tomcat@ET-TEAM2 application]$ cd ..
+[tomcat@ET-TEAM2 Hansol]$ rmdir application
+rmdir: failed to remove ‘application’: Permission denied
+[tomcat@ET-TEAM2 Hansol]$ sudo rmdir application
+[tomcat@ET-TEAM2 Hansol]$ ls -l
+total 0
+drwxr-xr-x 2 root   root    6 Nov 19 17:03 download
+drwxr-x--- 5 tomcat tomcat 48 Nov 24 17:08 ROOT
+drwxr-xr-x 3 root   root   69 Nov 19 18:01 server
+[tomcat@ET-TEAM2 Hansol]$ mv ROOT application
+mv: cannot move ‘ROOT’ to ‘application’: Permission denied
+[tomcat@ET-TEAM2 Hansol]$ sudo mv ROOT application
+[tomcat@ET-TEAM2 Hansol]$ chown tomcat:tomcat /Hansol
+chown: changing ownership of ‘/Hansol’: Operation not permitted
+[tomcat@ET-TEAM2 Hansol]$ sudo chown tomcat:tomcat /Hansol
+[tomcat@ET-TEAM2 Hansol]$ ls -l
+total 0
+drwxr-x--- 5 tomcat tomcat 48 Nov 24 17:08 application
+drwxr-xr-x 2 root   root    6 Nov 19 17:03 download
+drwxr-xr-x 3 root   root   69 Nov 19 18:01 server
+[tomcat@ET-TEAM2 Hansol]$ cd ..
+[tomcat@ET-TEAM2 /]$ ls -l
+total 28
+lrwxrwxrwx.   1 root   root      7 Mar 12  2021 bin -> usr/bin
+dr-xr-xr-x.   5 root   root   4096 Mar 15  2021 boot
+drwxr-xr-x    2 root   root      6 Nov 19 17:02 cd
+drwxr-xr-x   21 root   root   3280 Nov 24 09:39 dev
+drwxr-xr-x.  94 root   root   8192 Nov 24 13:11 etc
+drwxr-xr-x    5 tomcat tomcat   55 Nov 24 17:23 Hansol
+drwxr-xr-x.   3 root   root     20 Nov 24 11:44 home
+lrwxrwxrwx.   1 root   root      7 Mar 12  2021 lib -> usr/lib
+lrwxrwxrwx.   1 root   root      9 Mar 12  2021 lib64 -> usr/lib64
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 media
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 mnt
+drwxr-xr-x.   3 root   root     16 Mar 12  2021 opt
+dr-xr-xr-x  135 root   root      0 Nov 24 09:39 proc
+dr-xr-x---.   6 root   root    226 Nov 24 16:45 root
+drwxr-xr-x   32 root   root    980 Nov 24 09:39 run
+lrwxrwxrwx.   1 root   root      8 Mar 12  2021 sbin -> usr/sbin
+-rw-r--r--    1 root   root   7687 Oct 22 17:02 server.xml
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 srv
+dr-xr-xr-x   13 root   root      0 Nov 24 11:28 sys
+drwxrwxrwt.   9 root   root    159 Nov 24 17:21 tmp
+drwxr-xr-x.  13 root   root    155 Mar 12  2021 usr
+drwxr-xr-x.  21 root   root   4096 Mar 15  2021 var
+[tomcat@ET-TEAM2 /]$ sudo chown -rf tomcat:tomcat /Hansol
+chown: invalid option -- 'r'
+Try 'chown --help' for more information.
+[tomcat@ET-TEAM2 /]$ sudo chown -r tomcat:tomcat /Hansol
+chown: invalid option -- 'r'
+Try 'chown --help' for more information.
+[tomcat@ET-TEAM2 /]$ ls -0l
+ls: invalid option -- '0'
+Try 'ls --help' for more information.
+[tomcat@ET-TEAM2 /]$ ls -l
+total 28
+lrwxrwxrwx.   1 root   root      7 Mar 12  2021 bin -> usr/bin
+dr-xr-xr-x.   5 root   root   4096 Mar 15  2021 boot
+drwxr-xr-x    2 root   root      6 Nov 19 17:02 cd
+drwxr-xr-x   21 root   root   3280 Nov 24 09:39 dev
+drwxr-xr-x.  94 root   root   8192 Nov 24 13:11 etc
+drwxr-xr-x    5 tomcat tomcat   55 Nov 24 17:23 Hansol
+drwxr-xr-x.   3 root   root     20 Nov 24 11:44 home
+lrwxrwxrwx.   1 root   root      7 Mar 12  2021 lib -> usr/lib
+lrwxrwxrwx.   1 root   root      9 Mar 12  2021 lib64 -> usr/lib64
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 media
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 mnt
+drwxr-xr-x.   3 root   root     16 Mar 12  2021 opt
+dr-xr-xr-x  135 root   root      0 Nov 24 09:39 proc
+dr-xr-x---.   6 root   root    226 Nov 24 16:45 root
+drwxr-xr-x   32 root   root    980 Nov 24 09:39 run
+lrwxrwxrwx.   1 root   root      8 Mar 12  2021 sbin -> usr/sbin
+-rw-r--r--    1 root   root   7687 Oct 22 17:02 server.xml
+drwxr-xr-x.   2 root   root      6 Apr 11  2018 srv
+dr-xr-xr-x   13 root   root      0 Nov 24 11:28 sys
+drwxrwxrwt.   9 root   root    159 Nov 24 17:21 tmp
+drwxr-xr-x.  13 root   root    155 Mar 12  2021 usr
+drwxr-xr-x.  21 root   root   4096 Mar 15  2021 var
+[tomcat@ET-TEAM2 /]$ cd Hansol/
+[tomcat@ET-TEAM2 Hansol]$ ls 0l
+ls: cannot access 0l: No such file or directory
+[tomcat@ET-TEAM2 Hansol]$ ls 0l
+ls: cannot access 0l: No such file or directory
+[tomcat@ET-TEAM2 Hansol]$ ls -l
+total 0
+drwxr-x--- 5 tomcat tomcat 48 Nov 24 17:08 application
+drwxr-xr-x 2 root   root    6 Nov 19 17:03 download
+drwxr-xr-x 3 root   root   69 Nov 19 18:01 server
+[tomcat@ET-TEAM2 Hansol]$ cd application/
+[tomcat@ET-TEAM2 application]$ ls -l
+total 0
+drwxr-x--- 3 tomcat tomcat 57 Nov 24 17:08 META-INF
+drwxr-x--- 3 tomcat tomcat 29 Nov 24 17:08 org
+drwxr-x--- 6 tomcat tomcat 83 Nov 24 17:08 WEB-INF
+[tomcat@ET-TEAM2 application]$ cd ..
+[tomcat@ET-TEAM2 Hansol]$ vim /Hansol/server/apache-tomcat-8.5.59/
+[tomcat@ET-TEAM2 Hansol]$ cd /Hansol/server/apache-tomcat-8.5.59/conf
+[tomcat@ET-TEAM2 conf]$ vim server.xml
+[tomcat@ET-TEAM2 conf]$ cd ..
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ ls -l
+total 128
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 bin
+-rw-r----- 1 tomcat tomcat 19318 Oct  7  2020 BUILDING.txt
+drwx------ 3 tomcat tomcat   254 Nov 24 17:26 conf
+-rw-r----- 1 tomcat tomcat  5408 Oct  7  2020 CONTRIBUTING.md
+drwxr-x--- 2 tomcat tomcat  4096 Nov 19 17:36 lib
+-rw-r----- 1 tomcat tomcat 57011 Oct  7  2020 LICENSE
+drwxr-x--- 2 tomcat tomcat  4096 Nov 24 15:52 logs
+-rw-r----- 1 tomcat tomcat  1726 Oct  7  2020 NOTICE
+-rw-r----- 1 tomcat tomcat  3257 Oct  7  2020 README.md
+-rw-r----- 1 tomcat tomcat  7136 Oct  7  2020 RELEASE-NOTES
+-rw-r----- 1 tomcat tomcat 16262 Oct  7  2020 RUNNING.txt
+drwxr-x--- 2 tomcat tomcat    30 Nov 19 17:36 temp
+drwxr-x--- 6 tomcat tomcat    85 Nov 24 17:21 webapps
+drwxr-x--- 3 tomcat tomcat    22 Nov 19 18:11 work
+[tomcat@ET-TEAM2 apache-tomcat-8.5.59]$ cd bin
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ vim ../conf/
+Catalina/             catalina.properties   jaspic-providers.xml  logging.properties    tomcat-users.xml      web.xml
+catalina.policy       context.xml           jaspic-providers.xsd  server.xml            tomcat-users.xsd
+[tomcat@ET-TEAM2 bin]$ vim ../conf/server.xml
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/
+application/ download/    server/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/application/
+META-INF/ org/      WEB-INF/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/application/WEB-INF/
+classes/      layers.idx    lib/          lib-provided/ views/
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/application/WEB-INF/classes/
+application.properties      log4jdbc.log4j2.properties  mybatis-mapper/             static/
+com/                        log4j.xml                   .reloadtrigger
+[tomcat@ET-TEAM2 bin]$ vim /Hansol/application/WEB-INF/classes/application.properties
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+[tomcat@ET-TEAM2 bin]$ cim ../conf/server.xml
+bash: cim: command not found
+[tomcat@ET-TEAM2 bin]$ vim ../conf/server.xml
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ firewall-cmd --zone=public --add-port=80/tcp --permanent
+FirewallD is not running
+[tomcat@ET-TEAM2 bin]$ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables v1.4.21: can't initialize iptables table `nat': Permission denied (you must be root)
+Perhaps iptables or your kernel needs to be upgraded.
+[tomcat@ET-TEAM2 bin]$ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+FirewallD is not running
+[tomcat@ET-TEAM2 bin]$ systemctl start firewall-cmd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to manage system services or units.
+Authenticating as: root
+Password:
+==== AUTHENTICATION COMPLETE ===
+Failed to start firewall-cmd.service: Unit not found.
+[tomcat@ET-TEAM2 bin]$ systemctl start firewalld
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to manage system services or units.
+Authenticating as: root
+Password:
+==== AUTHENTICATION COMPLETE ===
+[tomcat@ET-TEAM2 bin]$ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+success
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ netstat -tnlp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::3306                 :::*                    LISTEN      -
+tcp6       0      0 :::111                  :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 127.0.0.1:8005          :::*                    LISTEN      7948/java
+[tomcat@ET-TEAM2 bin]$ systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+   Active: active (running) since Wed 2021-11-24 17:46:55 KST; 2min 38s ago
+     Docs: man:firewalld(1)
+ Main PID: 8064 (firewalld)
+   CGroup: /system.slice/firewalld.service
+           └─8064 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid
+[tomcat@ET-TEAM2 bin]$ systemctl restart firewalld
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
+Authentication is required to manage system services or units.
+Authenticating as: root
+Password:
+==== AUTHENTICATION COMPLETE ===
+[tomcat@ET-TEAM2 bin]$ systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+   Active: active (running) since Wed 2021-11-24 17:49:45 KST; 1s ago
+     Docs: man:firewalld(1)
+ Main PID: 8286 (firewalld)
+   CGroup: /system.slice/firewalld.service
+           └─8286 /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Nov 24, 2021 5:49:56 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Could not contact [localhost:8005]. Tomcat may not be running.
+Nov 24, 2021 5:49:56 PM org.apache.catalina.startup.Catalina stopServer
+SEVERE: Catalina.stop:
+java.net.ConnectException: Connection refused (Connection refused)
+        at java.net.PlainSocketImpl.socketConnect(Native Method)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.net.Socket.connect(Socket.java:607)
+        at java.net.Socket.connect(Socket.java:556)
+        at java.net.Socket.<init>(Socket.java:452)
+        at java.net.Socket.<init>(Socket.java:229)
+        at org.apache.catalina.startup.Catalina.stopServer(Catalina.java:504)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.catalina.startup.Bootstrap.stopServer(Bootstrap.java:388)
+        at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:478)
+
+[tomcat@ET-TEAM2 bin]$ ./startup
+bash: ./startup: No such file or directory
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ ./shutdown.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ netstat -tnlp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::3306                 :::*                    LISTEN      -
+tcp6       0      0 :::111                  :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+tcp6       0      0 127.0.0.1:8005          :::*                    LISTEN      8504/java
+[tomcat@ET-TEAM2 bin]$ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+[tomcat@ET-TEAM2 bin]$ sudo iptables -t nat -I OUTPUT -p tcp -d 127.0.0.1 --dport 80 -j REDIRECT --to-ports 8080
+[tomcat@ET-TEAM2 bin]$ iptables -t nat --line-numbers -n -L
+iptables v1.4.21: can't initialize iptables table `nat': Permission denied (you must be root)
+Perhaps iptables or your kernel needs to be upgraded.
+[tomcat@ET-TEAM2 bin]$ sudo iptables -t nat --line-numbers -n -L
+Chain PREROUTING (policy ACCEPT)
+num  target     prot opt source               destination
+1    PREROUTING_direct  all  --  0.0.0.0/0            0.0.0.0/0
+2    PREROUTING_ZONES_SOURCE  all  --  0.0.0.0/0            0.0.0.0/0
+3    PREROUTING_ZONES  all  --  0.0.0.0/0            0.0.0.0/0
+4    REDIRECT   tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:80 redir ports 8080
+
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination
+1    REDIRECT   tcp  --  0.0.0.0/0            127.0.0.1            tcp dpt:80 redir ports 8080
+2    OUTPUT_direct  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain POSTROUTING (policy ACCEPT)
+num  target     prot opt source               destination
+1    POSTROUTING_direct  all  --  0.0.0.0/0            0.0.0.0/0
+2    POSTROUTING_ZONES_SOURCE  all  --  0.0.0.0/0            0.0.0.0/0
+3    POSTROUTING_ZONES  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain OUTPUT_direct (1 references)
+num  target     prot opt source               destination
+
+Chain POSTROUTING_ZONES (1 references)
+num  target     prot opt source               destination
+1    POST_public  all  --  0.0.0.0/0            0.0.0.0/0           [goto]
+
+Chain POSTROUTING_ZONES_SOURCE (1 references)
+num  target     prot opt source               destination
+
+Chain POSTROUTING_direct (1 references)
+num  target     prot opt source               destination
+
+Chain POST_public (1 references)
+num  target     prot opt source               destination
+1    POST_public_log  all  --  0.0.0.0/0            0.0.0.0/0
+2    POST_public_deny  all  --  0.0.0.0/0            0.0.0.0/0
+3    POST_public_allow  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain POST_public_allow (1 references)
+num  target     prot opt source               destination
+
+Chain POST_public_deny (1 references)
+num  target     prot opt source               destination
+
+Chain POST_public_log (1 references)
+num  target     prot opt source               destination
+
+Chain PREROUTING_ZONES (1 references)
+num  target     prot opt source               destination
+1    PRE_public  all  --  0.0.0.0/0            0.0.0.0/0           [goto]
+
+Chain PREROUTING_ZONES_SOURCE (1 references)
+num  target     prot opt source               destination
+
+Chain PREROUTING_direct (1 references)
+num  target     prot opt source               destination
+
+Chain PRE_public (1 references)
+num  target     prot opt source               destination
+1    PRE_public_log  all  --  0.0.0.0/0            0.0.0.0/0
+2    PRE_public_deny  all  --  0.0.0.0/0            0.0.0.0/0
+3    PRE_public_allow  all  --  0.0.0.0/0            0.0.0.0/0
+
+Chain PRE_public_allow (1 references)
+num  target     prot opt source               destination
+
+Chain PRE_public_deny (1 references)
+num  target     prot opt source               destination
+
+Chain PRE_public_log (1 references)
+num  target     prot opt source               destination
+[tomcat@ET-TEAM2 bin]$ ls -l
+total 868
+-rw-r----- 1 tomcat tomcat  36132 Oct  7  2020 bootstrap.jar
+-rw-r----- 1 tomcat tomcat  16655 Oct  7  2020 catalina.bat
+-rwxr-x--- 1 tomcat tomcat  25121 Oct  7  2020 catalina.sh
+-rw-r----- 1 tomcat tomcat   1664 Oct  7  2020 catalina-tasks.xml
+-rw-r----- 1 tomcat tomcat   2123 Oct  7  2020 ciphers.bat
+-rwxr-x--- 1 tomcat tomcat   1997 Oct  7  2020 ciphers.sh
+-rw-r----- 1 tomcat tomcat  25287 Oct  7  2020 commons-daemon.jar
+-rw-r----- 1 tomcat tomcat 208136 Oct  7  2020 commons-daemon-native.tar.gz
+-rw-r----- 1 tomcat tomcat   2040 Oct  7  2020 configtest.bat
+-rwxr-x--- 1 tomcat tomcat   1922 Oct  7  2020 configtest.sh
+-rwxr-x--- 1 tomcat tomcat   9100 Oct  7  2020 daemon.sh
+-rw-r----- 1 tomcat tomcat   2091 Oct  7  2020 digest.bat
+-rwxr-x--- 1 tomcat tomcat   1965 Oct  7  2020 digest.sh
+-rw-r----- 1 tomcat tomcat   3460 Oct  7  2020 setclasspath.bat
+-rwxr-x--- 1 tomcat tomcat   3708 Oct  7  2020 setclasspath.sh
+-rw-r----- 1 tomcat tomcat   2020 Oct  7  2020 shutdown.bat
+-rwxr-x--- 1 tomcat tomcat   1902 Oct  7  2020 shutdown.sh
+-rw-r----- 1 tomcat tomcat   2022 Oct  7  2020 startup.bat
+-rwxr-x--- 1 tomcat tomcat   1904 Oct  7  2020 startup.sh
+-rw-r----- 1 tomcat tomcat  51205 Oct  7  2020 tomcat-juli.jar
+-rw-r----- 1 tomcat tomcat 421399 Oct  7  2020 tomcat-native.tar.gz
+-rw-r----- 1 tomcat tomcat   4574 Oct  7  2020 tool-wrapper.bat
+-rwxr-x--- 1 tomcat tomcat   5540 Oct  7  2020 tool-wrapper.sh
+-rw-r----- 1 tomcat tomcat   2026 Oct  7  2020 version.bat
+-rwxr-x--- 1 tomcat tomcat   1908 Oct  7  2020 version.sh
+[tomcat@ET-TEAM2 bin]$ vim ../conf/
+Catalina/             catalina.properties   jaspic-providers.xml  logging.properties    tomcat-users.xml      web.xml
+catalina.policy       context.xml           jaspic-providers.xsd  server.xml            tomcat-users.xsd
+[tomcat@ET-TEAM2 bin]$ vim ../conf/server.xml
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$ ps -ef | grep 8080
+tomcat    8694  6650  0 17:55 pts/1    00:00:00 grep --color=auto 8080
+[tomcat@ET-TEAM2 bin]$ ps -ef | grep java
+tomcat    8504     1 11 17:50 pts/1    00:00:35 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64/bin/java -Djava.util.logging.config.file=/Hansol/server/apache-tomcat-8.5.59/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar -Dcatalina.base=/Hansol/server/apache-tomcat-8.5.59 -Dcatalina.home=/Hansol/server/apache-tomcat-8.5.59 -Djava.io.tmpdir=/Hansol/server/apache-tomcat-8.5.59/temp org.apache.catalina.startup.Bootstrap start
+tomcat    8696  6650  0 17:56 pts/1    00:00:00 grep --color=auto java
+[tomcat@ET-TEAM2 bin]$ kill -9 8504
+[tomcat@ET-TEAM2 bin]$ ps -ef | grep java
+tomcat    8698  6650  0 17:56 pts/1    00:00:00 grep --color=auto java
+[tomcat@ET-TEAM2 bin]$ ./startup.sh
+Using CATALINA_BASE:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_HOME:   /Hansol/server/apache-tomcat-8.5.59
+Using CATALINA_TMPDIR: /Hansol/server/apache-tomcat-8.5.59/temp
+Using JRE_HOME:        /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-1.el7_9.x86_64
+Using CLASSPATH:       /Hansol/server/apache-tomcat-8.5.59/bin/bootstrap.jar:/Hansol/server/apache-tomcat-8.5.59/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[tomcat@ET-TEAM2 bin]$
+Network error: Software caused connection abort
